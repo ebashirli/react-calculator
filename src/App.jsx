@@ -6,15 +6,16 @@ import { computer, getCurrent } from "./helpers/helpers";
 
 const initialArg = {
   newNumber: true,
-  current: 0,
-  result: 0,
+  current: "0",
+  result: "0",
   operator: "",
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "value":
-      let current = getCurrent(action.payload, state.current, state.newNumber);
+      let current =
+        "" + getCurrent(action.payload, state.current, state.newNumber);
 
       return {
         ...state,
@@ -22,12 +23,13 @@ function reducer(state, action) {
         current,
       };
     case "operator":
-      let result = computer(state.result, state.operator, state.current);
+      let result = "" + computer(state.result, state.operator, state.current);
+
       return {
         ...state,
         newNumber: true,
         current: result,
-        result,
+        result: action.payload === "=" ? 0 : result,
         operator: action.payload,
       };
     case "clear":

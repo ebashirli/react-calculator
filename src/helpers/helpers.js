@@ -19,11 +19,12 @@ export const computer = (first, operator, second) => {
       result = second;
       break;
   }
-  return result;
+  return +result.toFixed(15);
 };
 
 export const getCurrent = (payload, current, newNumber) => {
   // only on dot value payload is undefined
+  // alert(current);
   return !payload
     ? current + (current.includes(".") ? "" : ".")
     : (newNumber ? "" : current) + payload;
