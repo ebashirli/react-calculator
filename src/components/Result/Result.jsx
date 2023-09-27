@@ -1,9 +1,9 @@
 import React from "react";
 import "./Result.scss";
-const Result = () => {
+const Result = ({ state }) => {
   return (
     <div className="result-group">
-      <span id="result">1984</span>
+      <span id="result">{+state.current}</span>
       <small className={`alert`}>exceeded the process limit</small>
     </div>
   );

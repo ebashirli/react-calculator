@@ -4,7 +4,7 @@ import "./KeyboardBtn.scss";
 const KeyboardBtn = ({ mission, value, clickHandler, icon, active }) => {
   active = active ? "active" : "";
   return (
-    <div className={`keyboard-btn ${mission} ${active}`}>
+    <div onClick={clickHandler} className={`keyboard-btn ${mission} ${active}`}>
       {icon ? icon : value}
     </div>
   );

@@ -24,4 +24,3 @@ export const buttonsData = {
   clear: { id: uuidv4(), value: "C", mission: "clear" },
   result: { id: uuidv4(), value: "=", mission: "operator" },
 };
-
